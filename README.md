@@ -58,3 +58,23 @@ The Deductive Machine uses a modified backward chaining algorithm to perform the
      - If no question exists, set the flag to true.
 
 3. If the final goal is found in the context stack and its value is true, the answer is obtained. Otherwise, the answer cannot be found.
+
+# Example Rules
+
+| Правило | Условие 1                   | Условие 2              | Вывод             |
+|---------|-----------------------------|------------------------|-------------------|
+| 1       | country - France            | capital - Paris        | language - French |
+| 2       | country - France            | capital - Paris        | continent - Europe |
+| 3       | country - France            | language - French      | continent - Europe |
+| 4       | country - Japan             | capital - Tokyo        | language - Japanese |
+| 5       | country - Japan             | capital - Tokyo        | continent - Asia |
+| 6       | country - Japan             | language - Japanese    | continent - Asia |
+| 7       | country - Brazil            | capital - Brasília     | language - Portuguese |
+| 8       | country - Brazil            | capital - Brasília     | continent - South America |
+| 9       | country - Brazil            | language - Portuguese | continent - South America |
+| 10      | country - Australia         | capital - Canberra     | language - English |
+| 11      | country - Australia         | capital - Canberra     | continent - Australia |
+| 12      | country - Australia         | language - English     | continent - Australia |
+| 13      | country - Egypt             | capital - Cairo        | language - Arabic |
+| 14      | country - Egypt             | capital - Cairo        | continent - Africa |
+| 15      | country - Egypt             | language - Arabic      | continent - Africa |
