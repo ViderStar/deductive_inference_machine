@@ -91,41 +91,38 @@ class DeductiveMachine:
 
 
 rules = [
-    Rule(["класс - голосеменные", "структура листа - чешуеобразная"], "семейство - кипарисовые"),
-    Rule(["класс - голосеменные", "структура листа - иглоподобная", "конфигурация - хаотическая"],
-         "семейство - сосновые"),
-    Rule(["класс - голосеменные", "структура листа - иглоподобная", "конфигурация - 2 ровных ряда"],
-         "семейство - еловые"),
-    Rule(["класс - голосеменные", "структура листа - иглоподобная", "конфигурация - 2 ровных ряда",
-          "серебристая полоса - нет"], "семейство - болотный кипарис"),
-    Rule(["тип - деревья", "форма листа - широкая и плоская"], "класс - покрытосеменные"),
-    Rule(["тип - деревья", "форма листа - не (широкая и плоская)"], "класс - голосеменные"),
-    Rule(["стебель - зеленый"], "тип - травянистые"),
-    Rule(["стебель - древесный", "положение - стелющееся"], "тип - лианы"),
-    Rule(["стебель - древесный", "положение - прямостоящее", "один основной ствол - да"], "тип - деревья"),
-    Rule(["стебель - древесный", "положение - прямостоящее", "один основной ствол - нет"], "тип - кустарниковые"),
-    Rule(["голова - болит", "кости - ломит", "глаза - слезяться"], "заболевание - грипп")
+    Rule(["country - France"], "continent - Europe"),
+    Rule(["language - French"], "national majority - French"),
+    Rule(["national majority - French"], "capital - Paris"),
+    Rule(["country - Japan"], "continent - Asia"),
+    Rule(["language - Japanese"], "national majority - Japanese"),
+    Rule(["national majority - Japanese"], "capital - Tokyo"),
+    Rule(["country - Brazil"], "continent - South America"),
+    Rule(["language - Portuguese"], "national majority - Portuguese"),
+    Rule(["national majority - Portuguese"], "capital - Brasília"),
+    Rule(["country - Australia"], "continent - Australia"),
+    Rule(["language - English"], "national majority - English"),
+    Rule(["national majority - English"], "capital - Canberra"),
+    Rule(["country - Egypt"], "continent - Africa"),
+    Rule(["language - Arabic"], "national majority - Arabic"),
+    Rule(["national majority - Arabic"], "capital - Cairo")
 ]
 
 if __name__ == "__main__":
     machine = DeductiveMachine(rules)
 
     print("\nПример 1:")
-    machine.run("семейство - кипарисовые")
+    machine.run("language - Japanese")
     machine.clean_context()
 
     print("\nПример 2:")
-    machine.run("семейство - сосновые")
+    machine.run("language - English")
     machine.clean_context()
 
     print("\nПример 3:")
-    machine.run("тип - травянистые")
+    machine.run("national majority - Arabic")
     machine.clean_context()
 
     print("\nПример 4:")
-    machine.run("тип - лианы")
-    machine.clean_context()
-
-    print("\nПример 5:")
-    machine.run("заболевание - грипп")
+    machine.run("national majority - French")
     machine.clean_context()
